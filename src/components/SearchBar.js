@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Searchpng from '../assets/search.png';
 
 function SearchBar ({onSearch}){
     const [city, setCity] = useState('');
@@ -21,7 +22,7 @@ function SearchBar ({onSearch}){
             onChange={(e) => setCity(e.target.value)}
             />
             <button>
-                <img src="/images/search.png" alt="Search"/>
+                <img src={Searchpng} alt="Search"/>
             </button>
         </form>
     );

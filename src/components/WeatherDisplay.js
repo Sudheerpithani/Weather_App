@@ -1,23 +1,34 @@
 import React from "react";
+import Cloudspng from '../assets/clouds.png';
+import Clearpng from '../assets/clear.png';
+import Rainpng from '../assets/rain.png';
+import Mistpng from '../assets/mist.png';
+import Snowpng from '../assets/snow.png';
+import Drizzlepng from '../assets/drizzle.png';
+import Defaultpng from '../assets/default.png';
+import Humiditypng from '../assets/humidity.png';
+import Windpng from '../assets/wind.png';
+
+
 
 function WeatherDisplay({ weather }) {
   let weatherIconSrc = "";
   const weatherCondition = weather.weather[0].main.toLowerCase();
 
   if (weatherCondition.includes("clouds")) {
-    weatherIconSrc = "/images/clouds.png";
+    weatherIconSrc = Cloudspng;
   } else if (weatherCondition.includes("clear")) {
-    weatherIconSrc = "/images/clear.png";
+    weatherIconSrc = Clearpng;
   } else if (weatherCondition.includes("rain")) {
-    weatherIconSrc = "/images/rain.png";
+    weatherIconSrc = Rainpng;
   } else if (weatherCondition.includes("mist")) {
-    weatherIconSrc = "/images/mist.png";
+    weatherIconSrc = Mistpng;
   } else if (weatherCondition.includes("snow")) {
-    weatherIconSrc = "/images/snow.png";
+    weatherIconSrc = Snowpng;
   } else if (weatherCondition.includes("drizzle")) {
-    weatherIconSrc = "/images/drizzle.png";
+    weatherIconSrc = Drizzlepng;
   } else {
-    weatherIconSrc = "/images/default.png";
+    weatherIconSrc = Defaultpng;
   }
 
   return (
@@ -32,12 +43,12 @@ function WeatherDisplay({ weather }) {
 
       <div className="section">
         <div className="humidity-section">
-          <img src="/images/humidity.png" alt="Humidity icon" />
+          <img src={Humiditypng} alt="Humidity icon" />
           <p>{weather.main.humidity}% Humidity</p>
         </div>
 
         <div className="wind-section">
-          <img src="/images/wind.png" alt="Wind icon" />
+          <img src={Windpng} alt="Wind icon" />
           <p>{weather.wind.speed} m/s Wind</p>
         </div>
       </div>
